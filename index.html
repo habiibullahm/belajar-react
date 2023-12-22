@@ -16,13 +16,28 @@
     <script type="text/babel">
         const container = document.getElementById('root');
         const root = ReactDOM.createRoot(container);
-           root.render(
-            <>
-           <h1 className="heading">Belajar React Bareng WPU 🚀</h1>
+
+        function Header (props) {
+            return(
+                <>
+           <h1 className="heading">Belajar React Bareng {props.name}🚀</h1>
            <img src="img/habib.png" width="80" alt="My Image"/>
            <p onClick= {e => {alert('OK!')}}>Belajar React Itu Mudah Dan Menyenangkan Bukan?</p>
            </>
-           );
+            )
+        }
+        
+        function HomePage(){
+            return(
+                <>
+                    <Header name="WPU" />
+                    <Header name="Pa Habib" />
+                </>
+            )
+        }
+        
+        root.render(<HomePage/>);
+
 
     </script>
 </body>
